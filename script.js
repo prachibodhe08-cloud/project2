@@ -1,25 +1,20 @@
-const text = [
+const text=[
 "Frontend Developer",
-"Web Designer",
+"Creative Designer",
 "JavaScript Learner",
-"GitHub Enthusiast"
+"Future Full Stack Developer"
 ];
 
-let i = 0;
-let j = 0;
-let current = "";
-let letter = "";
+let i=0;
+let j=0;
 
 function type(){
 
-if(i < text.length){
+if(j<text[i].length){
 
-if(j <= text[i].length){
+document.getElementById("typing").innerHTML+=text[i].charAt(j);
 
-current = text[i];
-letter = current.slice(0,j++);
-
-document.getElementById("typing").textContent = letter;
+j++;
 
 setTimeout(type,100);
 
@@ -27,21 +22,29 @@ setTimeout(type,100);
 
 else{
 
-j=0;
-
-i++;
-
-setTimeout(type,1000);
+setTimeout(erase,1200);
 
 }
+
+}
+
+function erase(){
+
+if(j>0){
+
+document.getElementById("typing").innerHTML=text[i].substring(0,j-1);
+
+j--;
+
+setTimeout(erase,50);
 
 }
 
 else{
 
-i=0;
+i=(i+1)%text.length;
 
-type();
+setTimeout(type,300);
 
 }
 

@@ -6,199 +6,136 @@ font-family:Poppins,sans-serif;
 }
 
 body{
-
-background:linear-gradient(135deg,#141E30,#243B55);
+background:#0F172A;
 color:white;
-
 }
 
 header{
-
 display:flex;
 justify-content:space-between;
 align-items:center;
-
-padding:20px 10%;
-
+padding:25px 8%;
 }
 
 .logo{
-
-font-size:32px;
+font-size:35px;
 font-weight:bold;
-color:#00E5FF;
-
+color:#38BDF8;
 }
 
 nav a{
-
 color:white;
+margin-left:25px;
 text-decoration:none;
-margin-left:30px;
-transition:.4s;
-
+transition:.3s;
 }
 
 nav a:hover{
-
-color:#00E5FF;
-
+color:#38BDF8;
 }
 
 .hero{
-
-height:90vh;
-
 display:flex;
-
-justify-content:center;
-
+justify-content:space-between;
 align-items:center;
-
-text-align:center;
-
-padding:20px;
-
+padding:80px 8%;
+height:90vh;
 }
 
-.content{
-
-max-width:700px;
-
-animation:fade 1.5s;
-
+.left{
+width:50%;
 }
 
-h1{
-
-font-size:65px;
-
-color:#00E5FF;
-
-}
-
-h2{
-
+.left h1{
+font-size:60px;
 margin:20px 0;
-
-font-size:35px;
-
-color:#FFD54F;
-
-height:40px;
-
 }
 
-p{
+.left span{
+color:#38BDF8;
+}
 
+.left h2{
+height:45px;
+color:#FBBF24;
+}
+
+.left p{
 font-size:18px;
-
 line-height:30px;
+margin:20px 0;
+}
 
-margin-bottom:30px;
-
+.btn,.btn2{
+display:inline-block;
+padding:14px 30px;
+border-radius:30px;
+text-decoration:none;
+margin-right:15px;
+font-weight:bold;
 }
 
 .btn{
-
-background:#00E5FF;
-
-padding:14px 35px;
-
-border-radius:30px;
-
-text-decoration:none;
-
+background:#38BDF8;
 color:black;
-
-font-weight:bold;
-
-margin-right:15px;
-
-transition:.4s;
-
-}
-
-.btn:hover{
-
-background:white;
-
 }
 
 .btn2{
-
-padding:14px 35px;
-
-border:2px solid #00E5FF;
-
-border-radius:30px;
-
-text-decoration:none;
-
+border:2px solid #38BDF8;
 color:white;
-
 }
 
-.btn2:hover{
-
-background:#00E5FF;
-
-color:black;
-
+.profile-card{
+width:350px;
+height:350px;
+border-radius:30px;
+background:rgba(255,255,255,.1);
+backdrop-filter:blur(10px);
+display:flex;
+justify-content:center;
+align-items:center;
+box-shadow:0 0 40px #38BDF8;
+animation:float 4s infinite;
 }
 
-@keyframes fade{
-
-from{
-
-opacity:0;
-
-transform:translateY(60px);
-
+.profile-card img{
+width:300px;
+height:300px;
+border-radius:20px;
+object-fit:cover;
 }
 
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
+@keyframes float{
+50%{
+transform:translateY(-15px);
 }
-
 }
 
 @media(max-width:768px){
 
-header{
-
+.hero{
 flex-direction:column;
-
+text-align:center;
+height:auto;
 }
 
-nav{
-
-margin-top:20px;
-
+.left,.right{
+width:100%;
 }
 
-nav a{
-
-display:block;
-
-margin:15px;
-
+.left h1{
+font-size:40px;
 }
 
-h1{
-
-font-size:42px;
-
+.profile-card{
+margin-top:40px;
+width:250px;
+height:250px;
 }
 
-h2{
-
-font-size:24px;
-
+.profile-card img{
+width:210px;
+height:210px;
 }
 
 }
