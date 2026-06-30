@@ -3,73 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prachi | Portfolio</title>
+    <title>Prachi Bodhe | Portfolio</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/6b8f8d4d5a.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
 <header>
-    <nav>
-        <h2>Prachi</h2>
-        <ul>
+    <nav class="navbar">
+
+        <div class="logo">
+            Prachi<span>.</span>
+        </div>
+
+        <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+
     </nav>
 </header>
 
-<section id="home" class="hero">
-    <div>
-        <h1>Hello, I'm <span>Prachi</span></h1>
-        <h3>Web Developer</h3>
-        <p>I create beautiful and responsive websites.</p>
-        <button onclick="showMessage()">Hire Me</button>
-    </div>
+<section class="hero" id="home">
+
+<div class="hero-text">
+
+<h3>Hello 👋</h3>
+
+<h1>I'm <span>Prachi Bodhe</span></h1>
+
+<h2>Frontend Web Developer</h2>
+
+<p>
+I design beautiful, responsive websites using
+HTML, CSS and JavaScript.
+Currently learning Full Stack Development.
+</p>
+
+<a href="#projects" class="btn">View Projects</a>
+
+<a href="#contact" class="btn2">Contact Me</a>
+
+</div>
+
+<div class="hero-image">
+
+<img src="images/profile.jpg" alt="Profile">
+
+</div>
+
 </section>
 
 <section id="about">
-    <h2>About Me</h2>
-    <p>
-        Hi! My name is Prachi. I am a Diploma student and an aspiring Web Developer.
-        I enjoy creating websites using HTML, CSS, JavaScript, and Python.
-    </p>
+
+<h2>About Me</h2>
+
+<div class="about-box">
+
+<p>
+
+Hello! I'm Prachi Bodhe.
+
+I am a Diploma student passionate about Web Development.
+
+I enjoy creating modern websites with beautiful designs,
+animations and responsive layouts.
+
+Currently learning HTML, CSS, JavaScript,
+Git, GitHub and React.
+
+</p>
+
+</div>
+
 </section>
 
 <section id="skills">
-    <h2>Skills</h2>
 
-    <div class="cards">
-        <div class="card">HTML</div>
-        <div class="card">CSS</div>
-        <div class="card">JavaScript</div>
-        <div class="card">Python</div>
-        <div class="card">Flask</div>
-        <div class="card">GitHub</div>
-    </div>
+<h2>Skills</h2>
+
+<div class="skill-container">
+
+<div class="skill-card">
+<i class="fa-brands fa-html5"></i>
+<h3>HTML</h3>
+</div>
+
+<div class="skill-card">
+<i class="fa-brands fa-css3-alt"></i>
+<h3>CSS</h3>
+</div>
+
+<div class="skill-card">
+<i class="fa-brands fa-js"></i>
+<h3>JavaScript</h3>
+</div>
+
+<div class="skill-card">
+<i class="fa-brands fa-github"></i>
+<h3>GitHub</h3>
+</div>
+
+<div class="skill-card">
+<i class="fa-solid fa-code"></i>
+<h3>Responsive Design</h3>
+</div>
+
+</div>
+
 </section>
 
 <section id="projects">
-    <h2>Projects</h2>
 
-    <div class="project">
-        <h3>Snake Game</h3>
-        <p>A Snake Game created using HTML, CSS, JavaScript, and Python.</p>
-    </div>
+<h2>Projects</h2>
+
+<div class="project-container">
+
+<div class="project-card">
+
+<h3>Snake Game</h3>
+
+<p>
+
+Responsive snake game using HTML CSS JavaScript.
+
+</p>
+
+<button>Live Demo</button>
+
+</div>
+
+<div class="project-card">
+
+<h3>Portfolio Website</h3>
+
+<p>
+
+Modern Portfolio with animations.
+
+</p>
+
+<button>View</button>
+
+</div>
+
+<div class="project-card">
+
+<h3>Weather App</h3>
+
+<p>
+
+Weather application using JavaScript API.
+
+</p>
+
+<button>View</button>
+
+</div>
+
+</div>
+
 </section>
 
 <section id="contact">
-    <h2>Contact Me</h2>
 
-    <p>Email: prachibodhe08@gmail.com</p>
-    <p>Phone: +91 XXXXXXXXXX</p>
+<h2>Contact Me</h2>
+
+<form>
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Your Email">
+
+<textarea rows="6" placeholder="Write Message"></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
 </section>
 
 <footer>
-    <p>© 2026 Prachi. All Rights Reserved.</p>
+
+<h3>Prachi Bodhe</h3>
+
+<p>Made with ❤️ using HTML CSS JavaScript</p>
+
+<div class="social">
+
+<a href="#"><i class="fab fa-github"></i></a>
+
+<a href="#"><i class="fab fa-linkedin"></i></a>
+
+<a href="#"><i class="fab fa-instagram"></i></a>
+
+</div>
+
 </footer>
+
+<button id="topBtn">↑</button>
 
 <script src="script.js"></script>
 
