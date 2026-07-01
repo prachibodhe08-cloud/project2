@@ -1,52 +1,55 @@
-const text=[
+const words = [
+"Web Developer",
 "Frontend Developer",
-"Creative Designer",
-"JavaScript Learner",
-"Future Full Stack Developer"
+"JavaScript Developer"
 ];
 
-let i=0;
-let j=0;
+let i = 0;
+let j = 0;
+let current = "";
+let isDeleting = false;
 
-function type(){
+function type() {
 
-if(j<text[i].length){
+current = words[i];
 
-document.getElementById("typing").innerHTML+=text[i].charAt(j);
+if (!isDeleting) {
 
-j++;
+document.getElementById("typing").textContent =
+current.substring(0, j++);
 
-setTimeout(type,100);
+if (j > current.length) {
+
+isDeleting = true;
+
+setTimeout(type, 1000);
+
+return;
+
+}
 
 }
 
 else{
 
-setTimeout(erase,1200);
+document.getElementById("typing").textContent =
+current.substring(0, j--);
 
+if (j == 0) {
+
+isDeleting = false;
+
+i++;
+
+if(i==words.length){
+i=0;
 }
 
 }
 
-function erase(){
-
-if(j>0){
-
-document.getElementById("typing").innerHTML=text[i].substring(0,j-1);
-
-j--;
-
-setTimeout(erase,50);
-
 }
 
-else{
-
-i=(i+1)%text.length;
-
-setTimeout(type,300);
-
-}
+setTimeout(type,120);
 
 }
 
