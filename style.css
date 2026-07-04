@@ -1,169 +1,42 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-scroll-behavior:smooth;
-}
 
-body{
-background:#111;
-color:white;
-}
 
-header{
-position:fixed;
-width:100%;
-background:#000;
-padding:20px;
-}
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-nav ul{
-display:flex;
-list-style:none;
-}
-
-nav ul li{
-margin-left:20px;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-}
-
+/* Smooth Fade Animation */
 section{
-padding:100px 10%;
+    animation:fadeIn 1s ease-in-out;
 }
 
-#home{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-background:linear-gradient(45deg,#4facfe,#00f2fe);
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
-.content h1{
-font-size:55px;
+/* Button Animation */
+.btn,
+button{
+    transition:0.3s ease;
 }
 
-.content span{
-color:yellow;
+.btn:hover,
+button:hover{
+    transform:scale(1.08);
+    background:#00c6ff;
+    color:#fff;
+    box-shadow:0 0 20px #00c6ff;
 }
 
-.btn{
-display:inline-block;
-margin-top:20px;
-padding:12px 30px;
-background:white;
-color:#111;
-border-radius:30px;
-text-decoration:none;
-font-weight:bold;
-}
-
-#about{
-background:#181818;
-text-align:center;
-}
-
-#skills{
-background:#202020;
-}
-
-.skill{
-margin:25px 0;
-}
-
-.bar{
-width:100%;
-height:18px;
-background:#555;
-border-radius:20px;
-overflow:hidden;
-}
-
-.html{
-width:95%;
-height:100%;
-background:orange;
-}
-
-.css{
-width:90%;
-height:100%;
-background:deepskyblue;
-}
-
-.js{
-width:80%;
-height:100%;
-background:gold;
-}
-
-#projects{
-background:#181818;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
+/* Project Card Glow Effect */
 .card{
-background:#333;
-padding:25px;
-border-radius:15px;
-transition:.4s;
+    transition:0.4s ease;
 }
 
 .card:hover{
-transform:translateY(-10px);
-background:#4facfe;
-}
-
-#contact{
-background:#202020;
-}
-
-form{
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-input,textarea{
-padding:15px;
-border:none;
-border-radius:8px;
-}
-
-button{
-padding:15px;
-background:#4facfe;
-color:white;
-border:none;
-cursor:pointer;
-font-size:18px;
-}
-
-footer{
-text-align:center;
-padding:30px;
-background:black;
-}
-
-footer i{
-margin:15px;
-font-size:25px;
-cursor:pointer;
+    transform:translateY(-10px) scale(1.03);
+    background:#4facfe;
+    box-shadow:0 0 25px #4facfe;
 }
