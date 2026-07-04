@@ -1,47 +1,46 @@
-const words = [
-    "Web Developer",
+window.onload = function () {
+
+  const el = document.getElementById("typing");
+
+  if (!el) return;
+
+  const words = [
     "Frontend Developer",
-    "JavaScript Developer",
-    "UI/UX Designer",
-    "Freelancer"
-];
+    "Web Developer",
+    "UI Designer",
+    "JavaScript Developer"
+  ];
 
-let i = 0;
-let j = 0;
-let isDeleting = false;
+  let i = 0;
+  let text = "";
+  let isDeleting = false;
 
-const typing = document.getElementById("typing");
+  function run() {
 
-// Blinking cursor
-const cursor = document.createElement("span");
-cursor.textContent = "|";
-typing.after(cursor);
+    let current = words[i];
 
-setInterval(() => {
-    cursor.style.visibility =
-        cursor.style.visibility === "hidden" ? "visible" : "hidden";
-}, 500);
-
-function type() {
-    const current = words[i];
-
-    if (!isDeleting) {
-        typing.textContent = current.substring(0, j++);
-        if (j > current.length) {
-            isDeleting = true;
-            setTimeout(type, 1200);
-            return;
-        }
+    if (isDeleting) {
+      text = current.substring(0, text.length - 1);
     } else {
-        typing.textContent = current.substring(0, j--);
-        if (j < 0) {
-            isDeleting = false;
-            j = 0;
-            i = (i + 1) % words.length;
-        }
+      text = current.substring(0, text.length + 1);
     }
 
-    setTimeout(type, isDeleting ? 70 : 120);
-}
+    el.innerHTML = text;
 
-type();
+    let speed = isDeleting ? 70 : 120;
+
+    if (!isDeleting && text === current) {
+      speed = 1000;
+      isDeleting = true;
+    }
+
+    if (isDeleting && text === "") {
+      isDeleting = false;
+      i = (i + 1) % words.length;
+    }
+
+    setTimeout(run, speed);
+  }
+
+  run();
+};
