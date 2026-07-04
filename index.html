@@ -1,29 +1,59 @@
-<!-- New Features -->
-<button id="themeBtn" style="position:fixed;top:20px;right:20px;padding:10px 15px;border:none;border-radius:50%;cursor:pointer;font-size:18px;">🌙</button>
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:18px 45px;
+margin-top:30px;
+font-size:20px;
+font-weight:700;
+letter-spacing:1px;
+text-decoration:none;
+color:#fff;
+background:linear-gradient(135deg,#00c6ff,#0072ff,#7b2ff7);
+background-size:300% 300%;
+border:none;
+border-radius:50px;
+cursor:pointer;
+box-shadow:0 10px 30px rgba(0,114,255,.5);
+transition:all .4s ease;
+animation:gradientMove 5s ease infinite;
+position:relative;
+overflow:hidden;
+}
 
-<button id="topBtn" style="position:fixed;bottom:20px;right:20px;padding:12px 15px;border:none;border-radius:50%;background:#4facfe;color:white;font-size:18px;display:none;cursor:pointer;">
-<i class="fas fa-arrow-up"></i>
-</button>
+.btn::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:rgba(255,255,255,.25);
+transform:skewX(-25deg);
+transition:.6s;
+}
 
-<script>
-const themeBtn=document.getElementById("themeBtn");
-const topBtn=document.getElementById("topBtn");
+.btn:hover::before{
+left:120%;
+}
 
-themeBtn.onclick=()=>{
-document.body.classList.toggle("light");
-themeBtn.textContent=document.body.classList.contains("light")?"☀️":"🌙";
-};
+.btn:hover{
+transform:translateY(-6px) scale(1.08);
+box-shadow:0 15px 40px rgba(0,114,255,.7);
+}
 
-window.onscroll=()=>{
-topBtn.style.display=window.scrollY>300?"block":"none";
-};
+.btn:active{
+transform:scale(.96);
+}
 
-topBtn.onclick=()=>{
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-};
-</script>
-
-<style>
+@keyframes gradientMove{
+0%{
+background-position:0% 50%;
+}
+50%{
+background-position:100% 50%;
+}
+100%{
+background-position:0% 50%;
+}
+}
